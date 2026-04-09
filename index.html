@@ -89,27 +89,65 @@
         }
 
         /* Header */
+        /* التنسيق المحدث للهيدر */
         header {
             background: var(--white);
-            padding: 25px;
+            padding: 20px 40px;
             border-radius: 15px;
             box-shadow: var(--shadow);
             margin-bottom: 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            /* لتوزيع العناصر على الأطراف */
             border-top: 6px solid var(--primary);
+            text-align: center;
+        }
+
+        .header-logo {
+            width: 100px;
+            /* حجم الشعار */
+            height: auto;
+        }
+
+        .header-center-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .header-official h2 {
+            font-size: 18px;
+            color: var(--secondary);
+            margin: 0;
+            font-weight: 800;
+        }
+
+        .header-official h3 {
+            font-size: 16px;
+            color: var(--secondary);
+            margin: 0;
+            font-weight: bold;
         }
 
         .header-content h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin: 10px 0 5px 0;
         }
 
-        .header-content p {
-            font-size: 14px;
-            color: #7f8c8d;
+        /* تحسين التجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .header-logo {
+                width: 70px;
+                margin-bottom: 10px;
+            }
         }
 
         /* KPI Cards */
@@ -288,11 +326,20 @@
 
     <div class="container">
         <header>
-            <div class="header-content">
-                <p>الجمهورية الجزائرية الديمقراطية الشعبية</p>
-                <h1>📊 لوحة التحكم: مسابقة مدراء التكوين المهني 2026</h1>
-                <p>تحليل جغرافي وديموغرافي للمترشحين والمؤسسات</p>
+            <img src="logo.jpeg" alt="شعار الوزارة" class="header-logo">
+
+            <div class="header-center-content">
+                <div class="header-official">
+                    <h2>الجمهورية الجزائرية الديمقراطية الشعبية</h2>
+                    <h3>وزارة التكوين والتعليم المهنيين</h3>
+                </div>
+                <div class="header-content">
+                    <h1> لوحة التحكم: مسابقة مدراء التكوين المهني 2026</h1>
+
+                </div>
             </div>
+
+            <img src="logo.jpeg" alt="شعار الوزارة" class="header-logo">
         </header>
 
         <div class="kpi-row">
@@ -333,7 +380,8 @@
             </div>
         </div>
         <div class="panel" style="margin-top: 25px;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
                 <h2 style="border-right-color: #16a085; margin-bottom: 0;">📋 المعاهد والمراكز</h2>
                 <div class="filter-tabs">
                     <button class="tab-btn active" onclick="renderInstitutesTable('all', this)">الكل</button>
@@ -355,90 +403,90 @@
             </div>
         </div>
 
-    <div id="vacantModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--danger); margin-bottom: 20px;">المؤسسات الشاغرة تماماً (0 مترشح)</h2>
-            <table style="width: 100%;">
-                <thead>
-                    <tr style="background: #fff5f5;">
-                        <th>الرقم</th>
-                        <th>الولاية</th>
-                        <th>تسمية المؤسسة</th>
-                    </tr>
-                </thead>
-                <tbody id="vacantTableBody"></tbody>
-            </table>
+        <div id="vacantModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 style="color: var(--danger); margin-bottom: 20px;">المؤسسات الشاغرة تماماً (0 مترشح)</h2>
+                <table style="width: 100%;">
+                    <thead>
+                        <tr style="background: #fff5f5;">
+                            <th>الرقم</th>
+                            <th>الولاية</th>
+                            <th>تسمية المؤسسة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vacantTableBody"></tbody>
+                </table>
+            </div>
         </div>
-    </div>
 
-    <div class="panel" style="margin-top: 25px; border-top: 4px solid #8e44ad;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <h2 style="border-right-color: #8e44ad;">📊 جدول المترشحين حسب المعاهد الوطنية (INSFP) والرتب</h2>
-            <span class="badge" style="background: #f3e5f5; color: #7b1fa2;">إجمالي المعاهد: 08</span>
+        <div class="panel" style="margin-top: 25px; border-top: 4px solid #8e44ad;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2 style="border-right-color: #8e44ad;">📊 جدول المترشحين حسب المعاهد الوطنية (INSFP) والرتب</h2>
+                <span class="badge" style="background: #f3e5f5; color: #7b1fa2;">إجمالي المعاهد: 08</span>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اسم المعهد الوطني المتخصص (INSFP)</th>
+                            <th>الولاية</th>
+                            <th>أستاذ متخصص (ر1/ر2)</th>
+                            <th>مستشار توجيه</th>
+                            <th>مقتصد مسير</th>
+                            <th>رتب أخرى</th>
+                            <th>إجمالي المترشحين</th>
+                        </tr>
+                    </thead>
+                    <tbody id="insfpRankTable">
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>اسم المعهد الوطني المتخصص (INSFP)</th>
-                        <th>الولاية</th>
-                        <th>أستاذ متخصص (ر1/ر2)</th>
-                        <th>مستشار توجيه</th>
-                        <th>مقتصد مسير</th>
-                        <th>رتب أخرى</th>
-                        <th>إجمالي المترشحين</th>
-                    </tr>
-                </thead>
-                <tbody id="insfpRankTable">
-                </tbody>
-            </table>
+
+
+        <div class="panel" style="margin-top: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2 style="border-right-color: var(--success);">تحليل الكفاءات: توزيع الرتب حسب المؤسسة</h2>
+
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>المؤسسة المستهدفة</th>
+                            <th>نوع المؤسسة</th>
+                            <th>أساتذة متخصصون (ر2/ر1)</th>
+                            <th>مستشارو التوجيه</th>
+                            <th>مقتصدون مسيرون</th>
+                            <th>مساعدون تقنيون</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankDistributionBody">
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
+        <script>
 
+            //// ------------ جدول المترشحين حسب المعاهد الوطنية (INSFP) والرتب ----------
+            const insfpData = [
+                { name: "المعهد الوطني المتخصص قالمة", wilaya: "قالمة", psep: 12, counselor: 2, manager: 2, others: 1 },
+                { name: "المعهد الوطني المتخصص الأغواط", wilaya: "الأغواط", psep: 10, counselor: 3, manager: 3, others: 2 },
+                { name: "المعهد الوطني المتخصص رأس الوادي", wilaya: "ب.ب.ع", psep: 14, counselor: 2, manager: 1, others: 2 },
+                { name: "المعهد الوطني المتخصص مستغانم", wilaya: "مستغانم", psep: 15, counselor: 4, manager: 3, others: 2 },
+                { name: "المعهد الوطني المتخصص تلمسان", wilaya: "تلمسان", psep: 20, counselor: 5, manager: 2, others: 2 },
+                { name: "المعهد الوطني المتخصص وهران", wilaya: "وهران", psep: 8, counselor: 1, manager: 2, others: 1 },
+                { name: "المعهد الوطني المتخصص بجاية", wilaya: "بجاية", psep: 6, counselor: 1, manager: 1, others: 0 },
+                { name: "المعهد الوطني المتخصص ميلة", wilaya: "ميلة", psep: 9, counselor: 2, manager: 1, others: 0 }
+            ];
 
-    <div class="panel" style="margin-top: 25px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-            <h2 style="border-right-color: var(--success);">تحليل الكفاءات: توزيع الرتب حسب المؤسسة</h2>
+            const insfpTableBody = document.getElementById('insfpRankTable');
 
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>المؤسسة المستهدفة</th>
-                        <th>نوع المؤسسة</th>
-                        <th>أساتذة متخصصون (ر2/ر1)</th>
-                        <th>مستشارو التوجيه</th>
-                        <th>مقتصدون مسيرون</th>
-                        <th>مساعدون تقنيون</th>
-                    </tr>
-                </thead>
-                <tbody id="rankDistributionBody">
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <script>
+            insfpData.forEach(item => {
+                const total = item.psep + item.counselor + item.manager + item.others;
 
-        //// ------------ جدول المترشحين حسب المعاهد الوطنية (INSFP) والرتب ----------
-        const insfpData = [
-            { name: "المعهد الوطني المتخصص قالمة", wilaya: "قالمة", psep: 12, counselor: 2, manager: 2, others: 1 },
-            { name: "المعهد الوطني المتخصص الأغواط", wilaya: "الأغواط", psep: 10, counselor: 3, manager: 3, others: 2 },
-            { name: "المعهد الوطني المتخصص رأس الوادي", wilaya: "ب.ب.ع", psep: 14, counselor: 2, manager: 1, others: 2 },
-            { name: "المعهد الوطني المتخصص مستغانم", wilaya: "مستغانم", psep: 15, counselor: 4, manager: 3, others: 2 },
-            { name: "المعهد الوطني المتخصص تلمسان", wilaya: "تلمسان", psep: 20, counselor: 5, manager: 2, others: 2 },
-            { name: "المعهد الوطني المتخصص وهران", wilaya: "وهران", psep: 8, counselor: 1, manager: 2, others: 1 },
-            { name: "المعهد الوطني المتخصص بجاية", wilaya: "بجاية", psep: 6, counselor: 1, manager: 1, others: 0 },
-            { name: "المعهد الوطني المتخصص ميلة", wilaya: "ميلة", psep: 9, counselor: 2, manager: 1, others: 0 }
-        ];
-
-        const insfpTableBody = document.getElementById('insfpRankTable');
-
-        insfpData.forEach(item => {
-            const total = item.psep + item.counselor + item.manager + item.others;
-
-            let row = `<tr>
+                let row = `<tr>
         <td><strong>${item.name}</strong></td>
         <td>${item.wilaya}</td>
         <td style="text-align:center; font-weight:bold; color:#185FA5;">${item.psep}</td>
@@ -449,24 +497,24 @@
             <span class="badge" style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">${total}</span>
         </td>
     </tr>`;
-            insfpTableBody.innerHTML += row;
-        });
+                insfpTableBody.innerHTML += row;
+            });
 
-        //// ------------ جدول توزيع الرتب حسب المؤسسة (معهد vs مركز) ----------
+            //// ------------ جدول توزيع الرتب حسب المؤسسة (معهد vs مركز) ----------
 
 
-        const rankData = [
-            { name: "معهد قالمة (INSFP)", type: "معهد", professors: 12, counselors: 2, managers: 2, assistants: 1 },
-            { name: "معهد الأغواط (INSFP)", type: "معهد", professors: 10, counselors: 3, managers: 3, assistants: 2 },
-            { name: "مركز تلمسان (CFPA)", type: "مركز", professors: 15, counselors: 5, managers: 4, assistants: 5 },
-            { name: "مركز مزغران (CFPA)", type: "مركز", professors: 8, counselors: 6, managers: 5, assistants: 5 },
-            { name: "معهد رأس الوادي (INSFP)", type: "معهد", professors: 14, counselors: 2, managers: 1, assistants: 2 }
-        ];
+            const rankData = [
+                { name: "معهد قالمة (INSFP)", type: "معهد", professors: 12, counselors: 2, managers: 2, assistants: 1 },
+                { name: "معهد الأغواط (INSFP)", type: "معهد", professors: 10, counselors: 3, managers: 3, assistants: 2 },
+                { name: "مركز تلمسان (CFPA)", type: "مركز", professors: 15, counselors: 5, managers: 4, assistants: 5 },
+                { name: "مركز مزغران (CFPA)", type: "مركز", professors: 8, counselors: 6, managers: 5, assistants: 5 },
+                { name: "معهد رأس الوادي (INSFP)", type: "معهد", professors: 14, counselors: 2, managers: 1, assistants: 2 }
+            ];
 
-        const rankTableBody = document.getElementById('rankDistributionBody');
+            const rankTableBody = document.getElementById('rankDistributionBody');
 
-        rankData.forEach(item => {
-            let row = `<tr>
+            rankData.forEach(item => {
+                let row = `<tr>
         <td><strong>${item.name}</strong></td>
         <td><span class="badge ${item.type === 'معهد' ? 'badge-insfp' : 'badge-cfpa'}">${item.type}</span></td>
         <td style="text-align:center; font-weight:bold; color:#185FA5">${item.professors}</td>
@@ -474,140 +522,140 @@
         <td style="text-align:center">${item.managers}</td>
         <td style="text-align:center">${item.assistants}</td>
     </tr>`;
-            rankTableBody.innerHTML += row;
-        });
+                rankTableBody.innerHTML += row;
+            });
 
-        // --- جدول المعاهد والمراكز والمترشحين ---
-        const institutesData = [
-            { name: "المعهد الوطني المتخصص في التكوين المهني لعجين ميلود – سيدي بلعباس", count: 3, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني بالبرواقية – المدية", count: 3, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني للتسيير – الأغواط", count: 5, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني أمدور عبد الحق – قالمة", count: 4, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني سبدو – تلمسان", count: 3, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني راس الوادي – برج بوعريريج", count: 3, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني بواقنون – تيزي وزو", count: 3, type: "INSFP" },
-            { name: "المعهد الوطني المتخصص في التكوين المهني بربيح – الجلفة", count: 3, type: "INSFP" },
-            
-            { name: "مركز التكوين المهني و التمهين عين طويلة – خنشلة", count: 3, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين المزدور – البويرة", count: 3, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين أم البواقي", count: 4, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين بني معوش – بجاية", count: 3, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين تلاغمة – ميلة", count: 3, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين تلمسان", count: 5, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين سوق الخميس – البويرة", count: 4, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين مزغران – مستغانم", count: 3, type: "CFPA" },
-            { name: "مركز التكوين المهني و التمهين للبنات وهران 01", count: 6, type: "CFPA" }
-        ];
+            // --- جدول المعاهد والمراكز والمترشحين ---
+            const institutesData = [
+                { name: "المعهد الوطني المتخصص في التكوين المهني لعجين ميلود – سيدي بلعباس", count: 3, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني بالبرواقية – المدية", count: 3, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني للتسيير – الأغواط", count: 5, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني أمدور عبد الحق – قالمة", count: 4, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني سبدو – تلمسان", count: 3, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني راس الوادي – برج بوعريريج", count: 3, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني بواقنون – تيزي وزو", count: 3, type: "INSFP" },
+                { name: "المعهد الوطني المتخصص في التكوين المهني بربيح – الجلفة", count: 3, type: "INSFP" },
 
-        function renderInstitutesTable(filterType, btnElem) {
-            if (btnElem) {
-                btnElem.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-                btnElem.classList.add('active');
-            }
+                { name: "مركز التكوين المهني و التمهين عين طويلة – خنشلة", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين المزدور – البويرة", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين أم البواقي", count: 4, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين بني معوش – بجاية", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين تلاغمة – ميلة", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين تلمسان", count: 5, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين سوق الخميس – البويرة", count: 4, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين مزغران – مستغانم", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين للبنات وهران 01", count: 6, type: "CFPA" }
+            ];
 
-            const tbody = document.getElementById('institutesTableBody');
-            tbody.innerHTML = "";
-            let totalCount = 0;
+            function renderInstitutesTable(filterType, btnElem) {
+                if (btnElem) {
+                    btnElem.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    btnElem.classList.add('active');
+                }
 
-            const filtered = filterType === 'all' ? institutesData : institutesData.filter(i => i.type === filterType);
+                const tbody = document.getElementById('institutesTableBody');
+                tbody.innerHTML = "";
+                let totalCount = 0;
 
-            filtered.forEach(item => {
-                totalCount += item.count;
-                const badge = item.type === 'INSFP' ? '<span class="badge-type type-insfp" style="margin-right:8px;">معهد</span>' : '<span class="badge-type type-cfpa" style="margin-right:8px;">مركز</span>';
-                let row = `<tr>
+                const filtered = filterType === 'all' ? institutesData : institutesData.filter(i => i.type === filterType);
+
+                filtered.forEach(item => {
+                    totalCount += item.count;
+                    const badge = item.type === 'INSFP' ? '<span class="badge-type type-insfp" style="margin-right:8px;">معهد</span>' : '<span class="badge-type type-cfpa" style="margin-right:8px;">مركز</span>';
+                    let row = `<tr>
             <td><strong>${item.name}</strong>${badge}</td>
             <td style="text-align:center"><span class="badge badge-m">${item.count}</span></td>
         </tr>`;
-                tbody.innerHTML += row;
-            });
+                    tbody.innerHTML += row;
+                });
 
-            // إضافة صف المجموع
-            let totalRow = `<tr style="background: #f8fafc; font-weight: bold;">
+                // إضافة صف المجموع
+                let totalRow = `<tr style="background: #f8fafc; font-weight: bold;">
             <td><strong>المجموع</strong></td>
             <td style="text-align:center"><span class="badge" style="background: var(--primary); color: white;">${totalCount}</span></td>
         </tr>`;
-            tbody.innerHTML += totalRow;
-        }
+                tbody.innerHTML += totalRow;
+            }
 
-        // 초기 랜더링 (Initial Render)
-        document.addEventListener('DOMContentLoaded', () => {
-            renderInstitutesTable('all');
-        });
-        // --- 1. الخريطة التفاعلية ---
-        am5.ready(function () {
-            var root = am5.Root.new("mapdiv");
-            root.setThemes([am5themes_Animated.new(root)]);
-            var chart = root.container.children.push(am5map.MapChart.new(root, {
-                projection: am5map.geoMercator(),
-                panX: "none", panY: "none", wheelY: "none"
-            }));
-            var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-                geoJSON: am5geodata_algeriaLow,
-                valueField: "value",
-                calculateAggregates: true
-            }));
-            polygonSeries.mapPolygons.template.setAll({ tooltipText: "{name}: {value} مترشح", fill: am5.color(0xe0e0e0) });
-            polygonSeries.set("heatRules", [{ target: polygonSeries.mapPolygons.template, dataField: "value", min: am5.color(0xd1e9ff), max: am5.color(0x185FA5), key: "fill" }]);
+            // 초기 랜더링 (Initial Render)
+            document.addEventListener('DOMContentLoaded', () => {
+                renderInstitutesTable('all');
+            });
+            // --- 1. الخريطة التفاعلية ---
+            am5.ready(function () {
+                var root = am5.Root.new("mapdiv");
+                root.setThemes([am5themes_Animated.new(root)]);
+                var chart = root.container.children.push(am5map.MapChart.new(root, {
+                    projection: am5map.geoMercator(),
+                    panX: "none", panY: "none", wheelY: "none"
+                }));
+                var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+                    geoJSON: am5geodata_algeriaLow,
+                    valueField: "value",
+                    calculateAggregates: true
+                }));
+                polygonSeries.mapPolygons.template.setAll({ tooltipText: "{name}: {value} مترشح", fill: am5.color(0xe0e0e0) });
+                polygonSeries.set("heatRules", [{ target: polygonSeries.mapPolygons.template, dataField: "value", min: am5.color(0xd1e9ff), max: am5.color(0x185FA5), key: "fill" }]);
 
-            polygonSeries.data.setAll([
-                { id: "DZ-13", value: 39 }, { id: "DZ-27", value: 37 }, { id: "DZ-03", value: 33 },
-                { id: "DZ-34", value: 19 }, { id: "DZ-24", value: 17 }, { id: "DZ-31", value: 12 }, { id: "DZ-35", value: 17 }
-            ]);
-        });
+                polygonSeries.data.setAll([
+                    { id: "DZ-13", value: 39 }, { id: "DZ-27", value: 37 }, { id: "DZ-03", value: 33 },
+                    { id: "DZ-34", value: 19 }, { id: "DZ-24", value: 17 }, { id: "DZ-31", value: 12 }, { id: "DZ-35", value: 17 }
+                ]);
+            });
 
-        // --- 2. مخطط الجنسين (دائري) ---
-        new Chart(document.getElementById('genderPie'), {
-            type: 'doughnut',
-            data: {
-                labels: ['ذكور', 'إناث'],
-                datasets: [{ data: [65, 35], backgroundColor: ['#185FA5', '#e74c3c'], cutout: '60%' }]
-            },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
-        });
+            // --- 2. مخطط الجنسين (دائري) ---
+            new Chart(document.getElementById('genderPie'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['ذكور', 'إناث'],
+                    datasets: [{ data: [65, 35], backgroundColor: ['#185FA5', '#e74c3c'], cutout: '60%' }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+            });
 
-        // --- 3. مخطط مكدس (Stacked Bar) ---
-        new Chart(document.getElementById('stackedBar'), {
-            type: 'bar',
-            data: {
-                labels: ['تلمسان', 'مزغران', 'الأغواط', 'قالمة'],
-                datasets: [
-                    { label: 'ذكور', data: [19, 15, 11, 10], backgroundColor: '#185FA5' },
-                    { label: 'إناث', data: [10, 9, 7, 7], backgroundColor: '#e74c3c' }
-                ]
-            },
-            options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } } }
-        });
+            // --- 3. مخطط مكدس (Stacked Bar) ---
+            new Chart(document.getElementById('stackedBar'), {
+                type: 'bar',
+                data: {
+                    labels: ['تلمسان', 'مزغران', 'الأغواط', 'قالمة'],
+                    datasets: [
+                        { label: 'ذكور', data: [19, 15, 11, 10], backgroundColor: '#185FA5' },
+                        { label: 'إناث', data: [10, 9, 7, 7], backgroundColor: '#e74c3c' }
+                    ]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } } }
+            });
 
-        // --- 4. تعبئة الجداول ---
-        const mainData = [
-            { n: "مركز تلمسان", w: "تلمسان", t: 29, m: 19, f: 10 },
-            { n: "مركز مزغران", w: "مستغانم", t: 24, m: 15, f: 9 },
-            { n: "معهد الأغواط", w: "الأغواط", t: 18, m: 11, f: 7 },
-            { n: "مركز وهران 01", w: "وهران", t: 12, m: 4, f: 8 }
-        ];
-        const vacantData = [
-            { r: 1, w: "بومرداس", i: "م.ت.م.ت زموري" },
-            { r: 2, w: "النعامة", i: "م.ت.م.ت عين الصفراء 02" },
-            { r: 3, w: "عنابة", i: "م.ت.م.ت بوعاطي محمود" },
-            { r: 4, w: "تيارت", i: "م.ت.م.ت قصر الشلالة" }
-        ];
+            // --- 4. تعبئة الجداول ---
+            const mainData = [
+                { n: "مركز تلمسان", w: "تلمسان", t: 29, m: 19, f: 10 },
+                { n: "مركز مزغران", w: "مستغانم", t: 24, m: 15, f: 9 },
+                { n: "معهد الأغواط", w: "الأغواط", t: 18, m: 11, f: 7 },
+                { n: "مركز وهران 01", w: "وهران", t: 12, m: 4, f: 8 }
+            ];
+            const vacantData = [
+                { r: 1, w: "بومرداس", i: "م.ت.م.ت زموري" },
+                { r: 2, w: "النعامة", i: "م.ت.م.ت عين الصفراء 02" },
+                { r: 3, w: "عنابة", i: "م.ت.م.ت بوعاطي محمود" },
+                { r: 4, w: "تيارت", i: "م.ت.م.ت قصر الشلالة" }
+            ];
 
-        const mainBody = document.getElementById('mainTableBody');
-        mainData.forEach(d => {
-            mainBody.innerHTML += `<tr><td><b>${d.n}</b></td><td>${d.w}</td><td>${d.t}</td>
+            const mainBody = document.getElementById('mainTableBody');
+            mainData.forEach(d => {
+                mainBody.innerHTML += `<tr><td><b>${d.n}</b></td><td>${d.w}</td><td>${d.t}</td>
         <td><span class="badge badge-m">${d.m}</span></td><td><span class="badge badge-f">${d.f}</span></td></tr>`;
-        });
+            });
 
-        // --- 5. وظائف النافذة المنبثقة ---
-        function openModal() {
-            const vBody = document.getElementById('vacantTableBody');
-            vBody.innerHTML = "";
-            vacantData.forEach(v => { vBody.innerHTML += `<tr><td>${v.r}</td><td><b>${v.w}</b></td><td>${v.i}</td></tr>`; });
-            document.getElementById('vacantModal').style.display = "block";
-        }
-        function closeModal() { document.getElementById('vacantModal').style.display = "none"; }
-        window.onclick = function (e) { if (e.target == document.getElementById('vacantModal')) closeModal(); }
-    </script>
+            // --- 5. وظائف النافذة المنبثقة ---
+            function openModal() {
+                const vBody = document.getElementById('vacantTableBody');
+                vBody.innerHTML = "";
+                vacantData.forEach(v => { vBody.innerHTML += `<tr><td>${v.r}</td><td><b>${v.w}</b></td><td>${v.i}</td></tr>`; });
+                document.getElementById('vacantModal').style.display = "block";
+            }
+            function closeModal() { document.getElementById('vacantModal').style.display = "none"; }
+            window.onclick = function (e) { if (e.target == document.getElementById('vacantModal')) closeModal(); }
+        </script>
 
 </body>
 
