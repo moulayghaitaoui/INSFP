@@ -8,6 +8,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/flow.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/geodata/algeriaLow.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
@@ -362,23 +363,91 @@
 
         </div>
         <div class="main-grid">
-            <div class="panel">
-                <h2>التوزيع الجغرافي للمترشحين (حسب الولاية)</h2>
-                <div id="mapdiv"></div>
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                <div class="panel" style="margin-bottom: 0;">
+                    <h2>التوزيع الجغرافي للمترشحين (حسب الولاية)</h2>
+                    <div id="mapdiv"></div>
+                </div>
+
+                <div class="panel" style="margin-bottom: 0;">
+                    <h2 style="font-size: 17px; text-align: center;">توزيع المترشحين حسب نمط التنقل الجغرافي</h2>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                        <div>
+                            <h3 style="text-align: center; font-size: 14px; color: var(--secondary); margin-bottom: 10px;">لمنصب مدير معهد (INSFP)</h3>
+                            <div class="chart-container" style="height: 250px;">
+                                <canvas id="mobilityPie"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 style="text-align: center; font-size: 14px; color: var(--secondary); margin-bottom: 10px;">لمنصب مدير مركز (CFPA)</h3>
+                            <div class="chart-container" style="height: 250px;">
+                                <canvas id="mobilityCenterPie"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="panel">
-                <h2>توزيع الجنسين (عام)</h2>
+                <h2>نسبة كل معهد من إجمالي المترشحين</h2>
                 <div class="chart-container">
-                    <canvas id="genderPie"></canvas>
+                    <canvas id="institutePie"></canvas>
                 </div>
 
-                <h2>توزيع الجنسين حسب أهم المراكز</h2>
-                <div class="chart-container">
-                    <canvas id="stackedBar"></canvas>
+                <h2 style="font-size: 17px; margin-bottom: 15px;">توزيع المترشحين حسب الرتبة الحالية</h2>
+
+                <h3 style="font-size: 14px; color: var(--secondary); margin-bottom: 5px;">لمنصب مدير معهد (INSFP)</h3>
+                <div class="chart-container" style="height: 180px; margin-bottom: 25px;">
+                    <canvas id="rankBarChart"></canvas>
+                </div>
+
+                <h3 style="font-size: 14px; color: var(--secondary); margin-bottom: 5px;">لمنصب مدير مركز (CFPA)</h3>
+                <div class="chart-container" style="height: 180px;">
+                    <canvas id="rankCenterBarChart"></canvas>
                 </div>
             </div>
         </div>
+
+        <div class="panel" style="margin-top: 25px; border-top: 4px solid var(--primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h2 style="border-right-color: var(--primary);">👥 توزيع اللجان والمؤسسات والمترشحين</h2>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>اللجنة</th>
+                            <th>الأعضاء</th>
+                            <th>نوع المؤسسات</th>
+                            <th style="text-align: center;">عدد المؤسسات</th>
+                            <th style="text-align: center;">عدد المترشحين</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>اللجنة الأولى</strong></td>
+                            <td>السيد عيسى براهيمي<br>السيد بن با جلول<br>السيد بوشطارة مهدي</td>
+                            <td>8 معاهد وطنية (INSFP) + مركز تكوين مهني</td>
+                            <td style="text-align: center; font-weight: bold; color: var(--primary);">9</td>
+                            <td style="text-align: center;"><span class="badge badge-m">27</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>اللجنة الثانية</strong></td>
+                            <td>السيد موكاح فاروق<br>السيد كوديل صديق<br>السيد بافو أحمد</td>
+                            <td>مراكز التكوين المهني (CFPA)</td>
+                            <td style="text-align: center; font-weight: bold; color: var(--primary);">9</td>
+                            <td style="text-align: center;"><span class="badge badge-m">34</span></td>
+                        </tr>
+                        <tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #ccc;">
+                            <td colspan="3" style="text-align: right;"><strong>المجموع الإجمالي</strong></td>
+                            <td style="text-align: center; color: var(--primary);">18</td>
+                            <td style="text-align: center;"><span class="badge" style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">61</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="panel" style="margin-top: 25px;">
             <div
                 style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
@@ -429,13 +498,12 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>اسم المعهد الوطني المتخصص (INSFP)</th>
-                            <th>الولاية</th>
-                            <th>أستاذ متخصص (ر1/ر2)</th>
-                            <th>مستشار توجيه</th>
-                            <th>مقتصد مسير</th>
-                            <th>رتب أخرى</th>
-                            <th>إجمالي المترشحين</th>
+                            <th>المعهد</th>
+                            <th>أستاذ متخصص</th>
+                            <th>متصرف رئيسي</th>
+                            <th>مقتصد مسيّر</th>
+                            <th>مستشار رئيسي</th>
+                            <th>المجموع</th>
                         </tr>
                     </thead>
                     <tbody id="insfpRankTable">
@@ -471,34 +539,58 @@
 
             //// ------------ جدول المترشحين حسب المعاهد الوطنية (INSFP) والرتب ----------
             const insfpData = [
-                { name: "المعهد الوطني المتخصص قالمة", wilaya: "قالمة", psep: 12, counselor: 2, manager: 2, others: 1 },
-                { name: "المعهد الوطني المتخصص الأغواط", wilaya: "الأغواط", psep: 10, counselor: 3, manager: 3, others: 2 },
-                { name: "المعهد الوطني المتخصص رأس الوادي", wilaya: "ب.ب.ع", psep: 14, counselor: 2, manager: 1, others: 2 },
-                { name: "المعهد الوطني المتخصص مستغانم", wilaya: "مستغانم", psep: 15, counselor: 4, manager: 3, others: 2 },
-                { name: "المعهد الوطني المتخصص تلمسان", wilaya: "تلمسان", psep: 20, counselor: 5, manager: 2, others: 2 },
-                { name: "المعهد الوطني المتخصص وهران", wilaya: "وهران", psep: 8, counselor: 1, manager: 2, others: 1 },
-                { name: "المعهد الوطني المتخصص بجاية", wilaya: "بجاية", psep: 6, counselor: 1, manager: 1, others: 0 },
-                { name: "المعهد الوطني المتخصص ميلة", wilaya: "ميلة", psep: 9, counselor: 2, manager: 1, others: 0 }
+                { name: "بربيح – الجلفة", psep: 2, admin: 1, manager: 0, counselor: 0 },
+                { name: "أمدور عبد الحق – قالمة", psep: 4, admin: 0, manager: 0, counselor: 0 },
+                { name: "البرواقية – المدية", psep: 3, admin: 0, manager: 0, counselor: 0 },
+                { name: "بواقنون – تيزي وزو", psep: 2, admin: 0, manager: 0, counselor: 1 },
+                { name: "راس الوادي – برج بوعريريج", psep: 3, admin: 0, manager: 0, counselor: 0 },
+                { name: "سبدو – تلمسان", psep: 2, admin: 1, manager: 0, counselor: 0 },
+                { name: "لعجين ميلود – سيدي بلعباس", psep: 2, admin: 0, manager: 1, counselor: 0 },
+                { name: "التسيير – الأغواط", psep: 5, admin: 0, manager: 0, counselor: 0 }
             ];
 
             const insfpTableBody = document.getElementById('insfpRankTable');
+            insfpTableBody.innerHTML = "";
+
+            let totalPsep = 0;
+            let totalAdmin = 0;
+            let totalManager = 0;
+            let totalCounselor = 0;
+            let grandTotal = 0;
 
             insfpData.forEach(item => {
-                const total = item.psep + item.counselor + item.manager + item.others;
+                const total = item.psep + item.admin + item.manager + item.counselor;
+                totalPsep += item.psep;
+                totalAdmin += item.admin;
+                totalManager += item.manager;
+                totalCounselor += item.counselor;
+                grandTotal += total;
 
                 let row = `<tr>
         <td><strong>${item.name}</strong></td>
-        <td>${item.wilaya}</td>
         <td style="text-align:center; font-weight:bold; color:#185FA5;">${item.psep}</td>
-        <td style="text-align:center;">${item.counselor}</td>
+        <td style="text-align:center;">${item.admin}</td>
         <td style="text-align:center;">${item.manager}</td>
-        <td style="text-align:center;">${item.others}</td>
+        <td style="text-align:center;">${item.counselor}</td>
         <td style="text-align:center;">
             <span class="badge" style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">${total}</span>
         </td>
     </tr>`;
                 insfpTableBody.innerHTML += row;
             });
+
+            // إضافة صف المجموع الإجمالي
+            let totalsRow = `<tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #ccc;">
+        <td><strong>المجموع الإجمالي</strong></td>
+        <td style="text-align:center; color:#185FA5;">${totalPsep}</td>
+        <td style="text-align:center;">${totalAdmin}</td>
+        <td style="text-align:center;">${totalManager}</td>
+        <td style="text-align:center;">${totalCounselor}</td>
+        <td style="text-align:center;">
+            <span class="badge" style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">${grandTotal}</span>
+        </td>
+    </tr>`;
+            insfpTableBody.innerHTML += totalsRow;
 
             //// ------------ جدول توزيع الرتب حسب المؤسسة (معهد vs مركز) ----------
 
@@ -603,27 +695,198 @@
                 ]);
             });
 
-            // --- 2. مخطط الجنسين (دائري) ---
-            new Chart(document.getElementById('genderPie'), {
+            // --- 1.1 مخطط تصنيف التنقل (دائرة مثلثية / Pie Chart) ---
+            new Chart(document.getElementById('mobilityPie'), {
                 type: 'doughnut',
                 data: {
-                    labels: ['ذكور', 'إناث'],
-                    datasets: [{ data: [65, 35], backgroundColor: ['#185FA5', '#e74c3c'], cutout: '60%' }]
+                    labels: ['تنقل داخلي (نفس الولاية)', 'تنقل خارجي (بين الولايات)'],
+                    datasets: [{
+                        data: [14, 13],
+                        backgroundColor: ['#27ae60', '#e74c3c'],
+                        cutout: '50%'
+                    }]
                 },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Segoe UI', Tahoma", size: 14 } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    let value = context.raw;
+                                    let total = context.chart._metasets[context.datasetIndex].total;
+                                    let percentage = ((value / total) * 100).toFixed(1) + '%';
+                                    return label + value + ' مترشح (' + percentage + ')';
+                                }
+                            }
+                        }
+                    }
+                }
             });
 
-            // --- 3. مخطط مكدس (Stacked Bar) ---
-            new Chart(document.getElementById('stackedBar'), {
+            // --- 1.2 مخطط تصنيف التنقل - مراكز (Pie Chart) ---
+            new Chart(document.getElementById('mobilityCenterPie'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['تنقل داخلي', 'تنقل خارجي'],
+                    datasets: [{
+                        data: [12, 16],
+                        backgroundColor: ['#27ae60', '#e74c3c'],
+                        cutout: '50%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom', labels: { font: { family: "'Segoe UI', Tahoma", size: 13 } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    let value = context.raw;
+                                    let total = context.chart._metasets[context.datasetIndex].total;
+                                    let percentage = ((value / total) * 100).toFixed(1) + '%';
+                                    return label + value + ' مترشح (' + percentage + ')';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // --- 2. مخطط نسبة المعاهد (دائري) ---
+            new Chart(document.getElementById('institutePie'), {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'معهد الأغواط',
+                        'معهد قالمة',
+                        'معهد الجلفة',
+                        'معهد المدية',
+                        'معهد تيزي وزو',
+                        'معهد برج بوعريريج',
+                        'معهد تلمسان',
+                        'معهد سيدي بلعباس'
+                    ],
+                    datasets: [{
+                        data: [5, 4, 3, 3, 3, 3, 3, 3],
+                        backgroundColor: [
+                            '#185FA5', '#1abc9c', '#f39c12', '#e74c3c',
+                            '#9b59b6', '#34495e', '#f1c40f', '#3498db'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { font: { family: "'Segoe UI', Tahoma", size: 10 } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    let value = context.raw;
+                                    let total = context.chart._metasets[context.datasetIndex].total;
+                                    let percentage = ((value / total) * 100).toFixed(1) + '%';
+                                    return label + value + ' مترشح/ة (' + percentage + ')';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // --- 3. مخطط الرتب الحالية (Bar Chart) ---
+            const rankFullNames = [
+                "أستاذ متخصص في التكوين والتعليم المهنيين (بمختلف الصيغ)",
+                "متصرف رئيسي أو رتبة معادلة",
+                "مقتصد مسيّر لمؤسسات التكوين والتعليم المهنيين",
+                "مستشار رئيسي في التوجيه والتقييم والإدماج المهنيين"
+            ];
+            new Chart(document.getElementById('rankBarChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['تلمسان', 'مزغران', 'الأغواط', 'قالمة'],
+                    labels: ['أستاذ متخصص', 'متصرف رئيسي', 'مقتصد مسيّر', 'مستشار رئيسي'],
                     datasets: [
-                        { label: 'ذكور', data: [19, 15, 11, 10], backgroundColor: '#185FA5' },
-                        { label: 'إناث', data: [10, 9, 7, 7], backgroundColor: '#e74c3c' }
+                        {
+                            label: 'عدد المترشحين',
+                            data: [23, 2, 1, 1],
+                            backgroundColor: ['#2980b9', '#8e44ad', '#27ae60', '#f39c12'],
+                            borderRadius: 4
+                        }
                     ]
                 },
-                options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true }, y: { stacked: true } } }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                title: function (context) {
+                                    return rankFullNames[context[0].dataIndex];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 5 } }
+                    }
+                }
+            });
+
+            // --- 3.2 مخطط الرتب الحالية لمدير المركز (Bar Chart) ---
+            const rankCenterFullNames = [
+                "أستاذ متخصص في التكوين والتعليم المهنيين",
+                "مفتش / تقني وبيداغوجي",
+                "مستشار التوجيه والتقييم والإدماج المهنيين",
+                "متصرف",
+                "متصرف رئيسي أو رتبة معادلة",
+                "مقتصد مسير لمؤسسات التكوين"
+            ];
+            
+            new Chart(document.getElementById('rankCenterBarChart'), {
+                type: 'bar',
+                data: {
+                    labels: ['أستاذ متخصص', 'تقني بيداغوجي', 'مستشار توجيه', 'متصرف', 'متصرف رئيسي', 'مقتصد مسير'],
+                    datasets: [
+                        {
+                            label: 'عدد المترشحين',
+                            data: [17, 4, 2, 1, 1, 1],
+                            backgroundColor: ['#2ecc71', '#f1c40f', '#3498db', '#a55eea', '#795548', '#e67e22'],
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                title: function (context) {
+                                    return rankCenterFullNames[context[0].dataIndex];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, ticks: { stepSize: 5 } }
+                    }
+                }
             });
 
             // --- 4. تعبئة الجداول ---
