@@ -373,13 +373,17 @@
                     <h2 style="font-size: 17px; text-align: center;">توزيع المترشحين حسب نمط التنقل الجغرافي</h2>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
                         <div>
-                            <h3 style="text-align: center; font-size: 14px; color: var(--secondary); margin-bottom: 10px;">لمنصب مدير معهد (INSFP)</h3>
+                            <h3
+                                style="text-align: center; font-size: 14px; color: var(--secondary); margin-bottom: 10px;">
+                                لمنصب مدير معهد (INSFP)</h3>
                             <div class="chart-container" style="height: 250px;">
                                 <canvas id="mobilityPie"></canvas>
                             </div>
                         </div>
                         <div>
-                            <h3 style="text-align: center; font-size: 14px; color: var(--secondary); margin-bottom: 10px;">لمنصب مدير مركز (CFPA)</h3>
+                            <h3
+                                style="text-align: center; font-size: 14px; color: var(--secondary); margin-bottom: 10px;">
+                                لمنصب مدير مركز (CFPA)</h3>
                             <div class="chart-container" style="height: 250px;">
                                 <canvas id="mobilityCenterPie"></canvas>
                             </div>
@@ -389,9 +393,16 @@
             </div>
 
             <div class="panel">
-                <h2>نسبة كل معهد من إجمالي المترشحين</h2>
-                <div class="chart-container">
+                <h2 style="font-size: 17px; margin-bottom: 15px;">نسبة كل مؤسسة من إجمالي المترشحين</h2>
+
+                <h3 style="font-size: 14px; color: var(--secondary); margin-bottom: 5px;">مدير معهد (INSFP)</h3>
+                <div class="chart-container" style="height: 190px; margin-bottom: 25px;">
                     <canvas id="institutePie"></canvas>
+                </div>
+
+                <h3 style="font-size: 14px; color: var(--secondary); margin-bottom: 5px;">مدير مركز (CFPA)</h3>
+                <div class="chart-container" style="height: 190px; margin-bottom: 25px;">
+                    <canvas id="centerPie"></canvas>
                 </div>
 
                 <h2 style="font-size: 17px; margin-bottom: 15px;">توزيع المترشحين حسب الرتبة الحالية</h2>
@@ -429,19 +440,25 @@
                             <td>السيد عيسى براهيمي<br>السيد بن با جلول<br>السيد بوشطارة مهدي</td>
                             <td>8 معاهد وطنية (INSFP) + مركز تكوين مهني</td>
                             <td style="text-align: center; font-weight: bold; color: var(--primary);">9</td>
-                            <td style="text-align: center;"><span class="badge badge-m">27</span></td>
+                            <td style="text-align: center;"><span class="badge badge-m"><a
+                                        href="https://docs.google.com/spreadsheets/d/1RDQhjoIXGpAn_4bQx1Ur-tgHdy2gxPU0FOv2Wmwtvds/edit?usp=sharing">27</a></span>
+                            </td>
                         </tr>
                         <tr>
                             <td><strong>اللجنة الثانية</strong></td>
                             <td>السيد موكاح فاروق<br>السيد كوديل صديق<br>السيد بافو أحمد</td>
                             <td>مراكز التكوين المهني (CFPA)</td>
-                            <td style="text-align: center; font-weight: bold; color: var(--primary);">9</td>
-                            <td style="text-align: center;"><span class="badge badge-m">34</span></td>
+                            <td style="text-align: center; font-weight: bold; color: var(--primary);">8</td>
+                            <td style="text-align: center;"><span class="badge badge-m"><a
+                                        href="https://docs.google.com/spreadsheets/d/1YJEky-pxr5oLe8uoPkPeIq8owROTML9uewPu6aPNlj4/edit?usp=sharing">34</a></span>
+                            </td>
                         </tr>
                         <tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #ccc;">
                             <td colspan="3" style="text-align: right;"><strong>المجموع الإجمالي</strong></td>
-                            <td style="text-align: center; color: var(--primary);">18</td>
-                            <td style="text-align: center;"><span class="badge" style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">61</span></td>
+                            <td style="text-align: center; color: var(--primary);">17</td>
+                            <td style="text-align: center;"><span class="badge"
+                                    style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">61</span>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -512,29 +529,32 @@
             </div>
         </div>
 
-
-        <div class="panel" style="margin-top: 25px;">
+        <div class="panel" style="margin-top: 25px; border-top: 4px solid #16a085;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
-                <h2 style="border-right-color: var(--success);">تحليل الكفاءات: توزيع الرتب حسب المؤسسة</h2>
-
+                <h2 style="border-right-color: #16a085;">📊 جدول المترشحين حسب المركز (CFPA) والرتب</h2>
+                <span class="badge" style="background: #e8f8f5; color: #117a65;">إجمالي المراكز: 09</span>
             </div>
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th>المؤسسة المستهدفة</th>
-                            <th>نوع المؤسسة</th>
-                            <th>أساتذة متخصصون (ر2/ر1)</th>
-                            <th>مستشارو التوجيه</th>
-                            <th>مقتصدون مسيرون</th>
-                            <th>مساعدون تقنيون</th>
+                            <th>المركز</th>
+                            <th>أستاذ متخصص</th>
+                            <th>مساعد تقني</th>
+                            <th>مستشار رئيسي</th>
+                            <th>مستشار توجيه</th>
+                            <th>متصرف</th>
+                            <th>مقتصد</th>
+                            <th>المجموع</th>
                         </tr>
                     </thead>
-                    <tbody id="rankDistributionBody">
+                    <tbody id="cfpaRankTable">
                     </tbody>
                 </table>
             </div>
         </div>
+
+
         <script>
 
             //// ------------ جدول المترشحين حسب المعاهد الوطنية (INSFP) والرتب ----------
@@ -592,30 +612,68 @@
     </tr>`;
             insfpTableBody.innerHTML += totalsRow;
 
-            //// ------------ جدول توزيع الرتب حسب المؤسسة (معهد vs مركز) ----------
-
-
-            const rankData = [
-                { name: "معهد قالمة (INSFP)", type: "معهد", professors: 12, counselors: 2, managers: 2, assistants: 1 },
-                { name: "معهد الأغواط (INSFP)", type: "معهد", professors: 10, counselors: 3, managers: 3, assistants: 2 },
-                { name: "مركز تلمسان (CFPA)", type: "مركز", professors: 15, counselors: 5, managers: 4, assistants: 5 },
-                { name: "مركز مزغران (CFPA)", type: "مركز", professors: 8, counselors: 6, managers: 5, assistants: 5 },
-                { name: "معهد رأس الوادي (INSFP)", type: "معهد", professors: 14, counselors: 2, managers: 1, assistants: 2 }
+            //// ------------ جدول المترشحين حسب المراكز (CFPA) والرتب ----------
+            const cfpaData = [
+                { name: "CFPA عين طويلة", psep: 2, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA المزدور", psep: 3, tech: 0, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA أم البواقي", psep: 2, tech: 1, counselor: 1, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA بني معوش", psep: 2, tech: 0, counselor: 0, guidance: 0, admin: 1, manager: 0 },
+                { name: "CFPA تلاغمة", psep: 3, tech: 0, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA تلمسان", psep: 3, tech: 1, counselor: 0, guidance: 0, admin: 1, manager: 0 },
+                { name: "CFPA سوق الخميس", psep: 3, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA مزغران", psep: 0, tech: 1, counselor: 1, guidance: 0, admin: 0, manager: 1 },
+                { name: "CFPA وهران 01 (بنات)", psep: 1, tech: 2, counselor: 1, guidance: 1, admin: 0, manager: 1 }
             ];
 
-            const rankTableBody = document.getElementById('rankDistributionBody');
+            const cfpaTableBody = document.getElementById('cfpaRankTable');
+            cfpaTableBody.innerHTML = "";
 
-            rankData.forEach(item => {
+            let totalCfpaPsep = 0;
+            let totalCfpaTech = 0;
+            let totalCfpaCounselor = 0;
+            let totalCfpaGuidance = 0;
+            let totalCfpaAdmin = 0;
+            let totalCfpaManager = 0;
+            let grandCfpaTotal = 0;
+
+            cfpaData.forEach(item => {
+                const total = item.psep + item.tech + item.counselor + item.guidance + item.admin + item.manager;
+                totalCfpaPsep += item.psep;
+                totalCfpaTech += item.tech;
+                totalCfpaCounselor += item.counselor;
+                totalCfpaGuidance += item.guidance;
+                totalCfpaAdmin += item.admin;
+                totalCfpaManager += item.manager;
+                grandCfpaTotal += total;
+
                 let row = `<tr>
         <td><strong>${item.name}</strong></td>
-        <td><span class="badge ${item.type === 'معهد' ? 'badge-insfp' : 'badge-cfpa'}">${item.type}</span></td>
-        <td style="text-align:center; font-weight:bold; color:#185FA5">${item.professors}</td>
-        <td style="text-align:center">${item.counselors}</td>
-        <td style="text-align:center">${item.managers}</td>
-        <td style="text-align:center">${item.assistants}</td>
+        <td style="text-align:center; font-weight:bold; color:#16a085;">${item.psep}</td>
+        <td style="text-align:center;">${item.tech}</td>
+        <td style="text-align:center;">${item.counselor}</td>
+        <td style="text-align:center;">${item.guidance}</td>
+        <td style="text-align:center;">${item.admin}</td>
+        <td style="text-align:center;">${item.manager}</td>
+        <td style="text-align:center;">
+            <span class="badge" style="background:#1abc9c; color:white; min-width:30px; display:inline-block;">${total}</span>
+        </td>
     </tr>`;
-                rankTableBody.innerHTML += row;
+                cfpaTableBody.innerHTML += row;
             });
+
+            let cfpaTotalsRow = `<tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #ccc;">
+        <td><strong>المجموع الإجمالي</strong></td>
+        <td style="text-align:center; color:#16a085;">${totalCfpaPsep}</td>
+        <td style="text-align:center;">${totalCfpaTech}</td>
+        <td style="text-align:center;">${totalCfpaCounselor}</td>
+        <td style="text-align:center;">${totalCfpaGuidance}</td>
+        <td style="text-align:center;">${totalCfpaAdmin}</td>
+        <td style="text-align:center;">${totalCfpaManager}</td>
+        <td style="text-align:center;">
+            <span class="badge" style="background:#1abc9c; color:white; min-width:30px; display:inline-block;">${grandCfpaTotal}</span>
+        </td>
+    </tr>`;
+            cfpaTableBody.innerHTML += cfpaTotalsRow;
 
             // --- جدول المعاهد والمراكز والمترشحين ---
             const institutesData = [
@@ -677,22 +735,86 @@
             am5.ready(function () {
                 var root = am5.Root.new("mapdiv");
                 root.setThemes([am5themes_Animated.new(root)]);
+                
+                root.container.set("layout", root.verticalLayout);
+
                 var chart = root.container.children.push(am5map.MapChart.new(root, {
                     projection: am5map.geoMercator(),
-                    panX: "none", panY: "none", wheelY: "none"
+                    panX: "none", panY: "none", wheelY: "none",
+                    height: am5.percent(85)
                 }));
                 var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
                     geoJSON: am5geodata_algeriaLow,
                     valueField: "value",
                     calculateAggregates: true
                 }));
-                polygonSeries.mapPolygons.template.setAll({ tooltipText: "{name}: {value} مترشح", fill: am5.color(0xe0e0e0) });
+                // --- إعداد تصميم واضح للتلميحات (Tooltip) ---
+                var tooltip = am5.Tooltip.new(root, {
+                    getFillFromSprite: false,
+                    autoTextColor: false
+                });
+                tooltip.get("background").setAll({
+                    fill: am5.color(0xffffff),
+                    fillOpacity: 0.95,
+                    stroke: am5.color(0x185FA5),
+                    strokeWidth: 2,
+                    cornerRadius: 8
+                });
+                tooltip.label.setAll({
+                    fill: am5.color(0x333333),
+                    fontSize: 15,
+                    fontFamily: "'Segoe UI', Tahoma",
+                    fontWeight: "bold",
+                    textAlign: "center"
+                });
+
+                polygonSeries.mapPolygons.template.set("tooltip", tooltip);
+                polygonSeries.mapPolygons.template.setAll({ tooltipHTML: "<div style='direction:rtl; padding: 5px;'><span style='color: #185FA5; font-size: 16px;'>{name}</span><br/>عدد المترشحين: <span style='color: #e74c3c;'>{value}</span></div>", fill: am5.color(0xe0e0e0) });
                 polygonSeries.set("heatRules", [{ target: polygonSeries.mapPolygons.template, dataField: "value", min: am5.color(0xd1e9ff), max: am5.color(0x185FA5), key: "fill" }]);
 
                 polygonSeries.data.setAll([
-                    { id: "DZ-13", value: 39 }, { id: "DZ-27", value: 37 }, { id: "DZ-03", value: 33 },
-                    { id: "DZ-34", value: 19 }, { id: "DZ-24", value: 17 }, { id: "DZ-31", value: 12 }, { id: "DZ-35", value: 17 }
+                    { id: "DZ-40", value: 3 }, { id: "DZ-10", value: 7 }, { id: "DZ-04", value: 4 },
+                    { id: "DZ-06", value: 3 }, { id: "DZ-43", value: 3 }, { id: "DZ-13", value: 8 },
+                    { id: "DZ-27", value: 3 }, { id: "DZ-31", value: 6 }, { id: "DZ-17", value: 3 },
+                    { id: "DZ-24", value: 4 }, { id: "DZ-26", value: 3 }, { id: "DZ-15", value: 3 },
+                    { id: "DZ-34", value: 3 }, { id: "DZ-22", value: 3 }, { id: "DZ-03", value: 5 }
                 ]);
+
+                // --- HeatLegend مفتاح الخريطة ---
+                var heatLegend = root.container.children.push(am5.HeatLegend.new(root, {
+                    orientation: "horizontal",
+                    startColor: am5.color(0xd1e9ff),
+                    endColor: am5.color(0x185FA5),
+                    stepCount: 5,
+                    width: am5.percent(85),
+                    align: "center",
+                    marginTop: 15
+                }));
+
+                heatLegend.set("background", am5.RoundedRectangle.new(root, {
+                    fill: am5.color(0xffffff),
+                    fillOpacity: 0.95,
+                    cornerRadiusTL: 10,
+                    cornerRadiusTR: 10,
+                    cornerRadiusBL: 10,
+                    cornerRadiusBR: 10,
+                    stroke: am5.color(0xdddddd),
+                    strokeOpacity: 1
+                }));
+
+                heatLegend.startLabel.setAll({ fontSize: 13, fontWeight: "bold", fontFamily: "'Segoe UI', Tahoma", fill: am5.color(0x333333), paddingLeft: 10, paddingBottom: 5, paddingTop: 5, direction: "rtl" });
+                heatLegend.endLabel.setAll({ fontSize: 13, fontWeight: "bold", fontFamily: "'Segoe UI', Tahoma", fill: am5.color(0x333333), paddingRight: 10, paddingBottom: 5, paddingTop: 5, direction: "rtl" });
+
+                polygonSeries.events.on("datavalidated", function () {
+                    heatLegend.set("startValue", polygonSeries.getPrivate("valueLow"));
+                    heatLegend.set("endValue", polygonSeries.getPrivate("valueHigh"));
+                    
+                    // توليد التدرجات الرقمية على التسميات بشكل ملموس!
+                    let lowVal = polygonSeries.getPrivate("valueLow");
+                    let highVal = polygonSeries.getPrivate("valueHigh");
+                    heatLegend.set("startText", "أقل (" + lowVal + " مترشحين)");
+                    heatLegend.set("endText", "أكثر (" + highVal + " مترشحين)");
+                });
             });
 
             // --- 1.1 مخطط تصنيف التنقل (دائرة مثلثية / Pie Chart) ---
@@ -808,6 +930,51 @@
                 }
             });
 
+            // --- 2.2 مخطط نسبة المراكز (دائري) ---
+            new Chart(document.getElementById('centerPie'), {
+                type: 'pie',
+                data: {
+                    labels: [
+                        'تلمسان',
+                        'أم البواقي',
+                        'سوق الخميس',
+                        'عين طويلة',
+                        'المزدور',
+                        'بني معوش',
+                        'تلاغمة',
+                        'مزغران'
+                    ],
+                    datasets: [{
+                        data: [5, 4, 4, 3, 3, 3, 3, 3],
+                        backgroundColor: [
+                            '#3498db', '#f1c40f', '#e67e22', '#2ecc71',
+                            '#e74c3c', '#9b59b6', '#34495e', '#1abc9c'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { font: { family: "'Segoe UI', Tahoma", size: 10 } } },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    let value = context.raw;
+                                    let total = context.chart._metasets[context.datasetIndex].total;
+                                    let percentage = ((value / total) * 100).toFixed(2) + '%';
+                                    return label + value + ' مترشح (' + percentage + ')';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
             // --- 3. مخطط الرتب الحالية (Bar Chart) ---
             const rankFullNames = [
                 "أستاذ متخصص في التكوين والتعليم المهنيين (بمختلف الصيغ)",
@@ -856,7 +1023,7 @@
                 "متصرف رئيسي أو رتبة معادلة",
                 "مقتصد مسير لمؤسسات التكوين"
             ];
-            
+
             new Chart(document.getElementById('rankCenterBarChart'), {
                 type: 'bar',
                 data: {
