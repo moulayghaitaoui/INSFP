@@ -346,7 +346,7 @@
         <div class="kpi-row">
             <div class="kpi-card">
                 <label>إجمالي المؤسسات</label>
-                <span>17</span>
+                <span>18</span>
             </div>
             <div class="kpi-card" style="border-right: 4px solid #8e44ad;">
                 <label>المعاهد الوطنية (INSFP)</label>
@@ -354,11 +354,11 @@
             </div>
             <div class="kpi-card" style="border-right: 4px solid #2980b9;">
                 <label>مراكز التكوين (CFPA)</label>
-                <span style="color: #2980b9;">09</span>
+                <span style="color: #2980b9;">10</span>
             </div>
             <div class="kpi-card">
                 <label>إجمالي المترشحين</label>
-                <span style="color: var(--success);">61</span>
+                <span style="color: var(--success);">67</span>
             </div>
 
         </div>
@@ -401,7 +401,7 @@
                 </div>
 
                 <h3 style="font-size: 14px; color: var(--secondary); margin-bottom: 5px;">مدير مركز (CFPA)</h3>
-                <div class="chart-container" style="height: 190px; margin-bottom: 25px;">
+                <div class="chart-container" style="height: 320px; margin-bottom: 25px;">
                     <canvas id="centerPie"></canvas>
                 </div>
 
@@ -456,10 +456,10 @@
                         <tr>
                             <td><strong>اللجنة الأولى</strong></td>
                             <td>السيد بوشطارة مهدي<br>السيد بن با جلول<br>السيد عيسى براهيمي</td>
-                            <td>8 معاهد وطنية (INSFP) + مركز تكوين مهني</td>
-                            <td style="text-align: center; font-weight: bold; color: var(--primary);">9</td>
+                            <td>8 معاهد وطنية (INSFP) + 2 مركز تكوين مهني</td>
+                            <td style="text-align: center; font-weight: bold; color: var(--primary);">10</td>
                             <td style="text-align: center;"><span class="badge badge-m"><a
-                                        href="https://docs.google.com/spreadsheets/d/1RDQhjoIXGpAn_4bQx1Ur-tgHdy2gxPU0FOv2Wmwtvds/edit?usp=sharing">33</a></span>
+                                        href="https://docs.google.com/spreadsheets/d/1RDQhjoIXGpAn_4bQx1Ur-tgHdy2gxPU0FOv2Wmwtvds/edit?usp=sharing">37</a></span>
                             </td>
                         </tr>
                         <tr>
@@ -468,14 +468,14 @@
                             <td>مراكز التكوين المهني (CFPA)</td>
                             <td style="text-align: center; font-weight: bold; color: var(--primary);">8</td>
                             <td style="text-align: center;"><span class="badge badge-m"><a
-                                        href="https://docs.google.com/spreadsheets/d/1YJEky-pxr5oLe8uoPkPeIq8owROTML9uewPu6aPNlj4/edit?usp=sharing">28</a></span>
+                                        href="https://docs.google.com/spreadsheets/d/1YJEky-pxr5oLe8uoPkPeIq8owROTML9uewPu6aPNlj4/edit?usp=sharing">30</a></span>
                             </td>
                         </tr>
                         <tr style="background: #f8fafc; font-weight: bold; border-top: 2px solid #ccc;">
                             <td colspan="3" style="text-align: right;"><strong>المجموع الإجمالي</strong></td>
-                            <td style="text-align: center; color: var(--primary);">17</td>
+                            <td style="text-align: center; color: var(--primary);">18</td>
                             <td style="text-align: center;"><span class="badge"
-                                    style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">61</span>
+                                    style="background:#8e44ad; color:white; min-width:30px; display:inline-block;">67</span>
                             </td>
                         </tr>
                     </tbody>
@@ -550,7 +550,7 @@
         <div class="panel" style="margin-top: 25px; border-top: 4px solid #16a085;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
                 <h2 style="border-right-color: #16a085;">📊 جدول المترشحين حسب المركز (CFPA) والرتب</h2>
-                <span class="badge" style="background: #e8f8f5; color: #117a65;">إجمالي المراكز: 09</span>
+                <span class="badge" style="background: #e8f8f5; color: #117a65;">إجمالي المراكز: 10</span>
             </div>
             <div class="table-container">
                 <table>
@@ -632,15 +632,16 @@
 
             //// ------------ جدول المترشحين حسب المراكز (CFPA) والرتب ----------
             const cfpaData = [
-                { name: "CFPA عين طويلة", psep: 2, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 },
-                { name: "CFPA المزدور", psep: 3, tech: 0, counselor: 0, guidance: 0, admin: 0, manager: 0 },
-                { name: "CFPA أم البواقي", psep: 2, tech: 1, counselor: 1, guidance: 0, admin: 0, manager: 0 },
-                { name: "CFPA بني معوش", psep: 2, tech: 0, counselor: 0, guidance: 0, admin: 1, manager: 0 },
+                { name: "CFPA عين طويلة", psep: 1, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA المزدور", psep: 4, tech: 0, counselor: 1, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA أم البواقي", psep: 3, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA بني معوش", psep: 1, tech: 0, counselor: 0, guidance: 0, admin: 1, manager: 0 },
                 { name: "CFPA تلاغمة", psep: 3, tech: 0, counselor: 0, guidance: 0, admin: 0, manager: 0 },
-                { name: "CFPA تلمسان", psep: 3, tech: 1, counselor: 0, guidance: 0, admin: 1, manager: 0 },
-                { name: "CFPA سوق الخميس", psep: 3, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 },
+                { name: "CFPA تلمسان", psep: 4, tech: 1, counselor: 0, guidance: 0, admin: 1, manager: 0 },
+                { name: "CFPA سوق الخميس", psep: 3, tech: 2, counselor: 0, guidance: 0, admin: 0, manager: 0 },
                 { name: "CFPA مزغران", psep: 0, tech: 1, counselor: 1, guidance: 0, admin: 0, manager: 1 },
-                { name: "CFPA وهران 01 (بنات)", psep: 1, tech: 2, counselor: 1, guidance: 1, admin: 0, manager: 1 }
+                { name: "CFPA وهران 01 (بنات)", psep: 1, tech: 2, counselor: 1, guidance: 1, admin: 0, manager: 1 },
+                { name: "CFPA جيجل", psep: 3, tech: 1, counselor: 0, guidance: 0, admin: 0, manager: 0 }
             ];
 
             const cfpaTableBody = document.getElementById('cfpaRankTable');
@@ -704,15 +705,16 @@
                 { name: "المعهد الوطني المتخصص في التكوين المهني بواقنون – تيزي وزو", count: 3, type: "INSFP" },
                 { name: "المعهد الوطني المتخصص في التكوين المهني بربيح – الجلفة", count: 3, type: "INSFP" },
 
-                { name: "مركز التكوين المهني و التمهين عين طويلة – خنشلة", count: 3, type: "CFPA" },
-                { name: "مركز التكوين المهني و التمهين المزدور – البويرة", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين عين طويلة – خنشلة", count: 2, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين المزدور – البويرة", count: 5, type: "CFPA" },
                 { name: "مركز التكوين المهني و التمهين أم البواقي", count: 4, type: "CFPA" },
-                { name: "مركز التكوين المهني و التمهين بني معوش – بجاية", count: 3, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين بني معوش – بجاية", count: 2, type: "CFPA" },
                 { name: "مركز التكوين المهني و التمهين تلاغمة – ميلة", count: 3, type: "CFPA" },
-                { name: "مركز التكوين المهني و التمهين تلمسان", count: 5, type: "CFPA" },
-                { name: "مركز التكوين المهني و التمهين سوق الخميس – البويرة", count: 4, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين تلمسان", count: 6, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين سوق الخميس – البويرة", count: 5, type: "CFPA" },
                 { name: "مركز التكوين المهني و التمهين مزغران – مستغانم", count: 3, type: "CFPA" },
-                { name: "مركز التكوين المهني و التمهين للبنات وهران 01", count: 6, type: "CFPA" }
+                { name: "مركز التكوين المهني و التمهين للبنات وهران 01", count: 6, type: "CFPA" },
+                { name: "مركز التكوين المهني و التمهين جيجل", count: 4, type: "CFPA" }
             ];
 
             function renderInstitutesTable(filterType, btnElem) {
@@ -791,11 +793,25 @@
                 polygonSeries.set("heatRules", [{ target: polygonSeries.mapPolygons.template, dataField: "value", min: am5.color(0xd1e9ff), max: am5.color(0x185FA5), key: "fill" }]);
 
                 polygonSeries.data.setAll([
-                    { id: "DZ-40", value: 3 }, { id: "DZ-10", value: 7 }, { id: "DZ-04", value: 4 },
-                    { id: "DZ-06", value: 3 }, { id: "DZ-43", value: 3 }, { id: "DZ-13", value: 8 },
-                    { id: "DZ-27", value: 3 }, { id: "DZ-31", value: 6 }, { id: "DZ-17", value: 3 },
-                    { id: "DZ-24", value: 4 }, { id: "DZ-26", value: 3 }, { id: "DZ-15", value: 3 },
-                    { id: "DZ-34", value: 3 }, { id: "DZ-22", value: 3 }, { id: "DZ-03", value: 5 }
+                    // المراكز (CFPA)
+                    { id: "DZ-40", value: 2 },   // خنشلة - عين طويلة (2)
+                    { id: "DZ-10", value: 10 },  // البويرة - المزدور (5) + سوق الخميس (5)
+                    { id: "DZ-04", value: 4 },   // أم البواقي (4)
+                    { id: "DZ-06", value: 2 },   // بجاية - بني معوش (2)
+                    { id: "DZ-43", value: 3 },   // ميلة - تلاغمة (3)
+                    { id: "DZ-27", value: 3 },   // مستغانم - مزغران (3)
+                    { id: "DZ-31", value: 6 },   // وهران 01 بنات (6)
+                    { id: "DZ-18", value: 4 },   // جيجل (4)
+                    // المعاهد (INSFP)
+                    { id: "DZ-17", value: 3 },   // الجلفة - بربيح (3)
+                    { id: "DZ-24", value: 4 },   // قالمة - أمدور (4)
+                    { id: "DZ-26", value: 3 },   // المدية - البرواقية (3)
+                    { id: "DZ-15", value: 3 },   // تيزي وزو - بواقنون (3)
+                    { id: "DZ-34", value: 3 },   // برج بوعريريج - راس الوادي (3)
+                    { id: "DZ-22", value: 3 },   // سيدي بلعباس - لعجين ميلود (3)
+                    { id: "DZ-03", value: 5 },   // الأغواط - التسيير (5)
+                    // تلمسان: CFPA (6) + INSFP سبدو (3)
+                    { id: "DZ-13", value: 9 }
                 ]);
 
                 // --- HeatLegend مفتاح الخريطة ---
@@ -875,7 +891,7 @@
                 data: {
                     labels: ['تنقل داخلي', 'تنقل خارجي'],
                     datasets: [{
-                        data: [12, 16],
+                        data: [17, 23],
                         backgroundColor: ['#27ae60', '#e74c3c'],
                         cutout: '50%'
                     }]
@@ -953,35 +969,44 @@
                 type: 'pie',
                 data: {
                     labels: [
-                        'تلمسان',
-                        'أم البواقي',
-                        'سوق الخميس',
-                        'عين طويلة',
-                        'المزدور',
-                        'بني معوش',
-                        'تلاغمة',
-                        'مزغران'
+                        'تلمسان (6)',
+                        'سوق الخميس (5)',
+                        'المزدور (5)',
+                        'أم البواقي (4)',
+                        'جيجل (4)',
+                        'وهران 01 (6)',
+                        'عين طويلة (2)',
+                        'بني معوش (2)',
+                        'تلاغمة (3)',
+                        'مزغران (3)'
                     ],
                     datasets: [{
-                        data: [5, 4, 4, 3, 3, 3, 3, 3],
+                        data: [6, 5, 5, 4, 4, 6, 2, 2, 3, 3],
                         backgroundColor: [
-                            '#3498db', '#f1c40f', '#e67e22', '#2ecc71',
-                            '#e74c3c', '#9b59b6', '#34495e', '#1abc9c'
+                            '#3498db', '#e67e22', '#e74c3c', '#f1c40f',
+                            '#1abc9c', '#9b59b6', '#2ecc71', '#34495e', '#f39c12', '#16a085'
                         ]
                     }]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    layout: { padding: { bottom: 10 } },
                     plugins: {
-                        legend: { position: 'right', labels: { font: { family: "'Segoe UI', Tahoma", size: 10 } } },
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: { family: "'Segoe UI', Tahoma", size: 10 },
+                                padding: 8,
+                                boxWidth: 12,
+                                maxWidth: 200
+                            }
+                        },
                         tooltip: {
                             callbacks: {
                                 label: function (context) {
                                     let label = context.label || '';
-                                    if (label) {
-                                        label += ': ';
-                                    }
+                                    if (label) { label += ': '; }
                                     let value = context.raw;
                                     let total = context.chart._metasets[context.datasetIndex].total;
                                     let percentage = ((value / total) * 100).toFixed(2) + '%';
@@ -1034,22 +1059,22 @@
 
             // --- 3.2 مخطط الرتب الحالية لمدير المركز (Bar Chart) ---
             const rankCenterFullNames = [
-                "أستاذ متخصص في التكوين والتعليم المهنيين",
-                "مفتش / تقني وبيداغوجي",
-                "مستشار التوجيه والتقييم والإدماج المهنيين",
-                "متصرف",
-                "متصرف رئيسي أو رتبة معادلة",
-                "مقتصد مسير لمؤسسات التكوين"
+                "أستاذ متخصص في التكوين والتعليم المهنيين (بمختلف الصيغ)",
+                "مساعد تقني وبيداغوجي",
+                "مستشار رئيسي في التوجيه والتقييم والإدماج المهنيين",
+                "مستشار التوجيه والإدماج المهنيين",
+                "متصرف / متصرف محلل",
+                "مقتصد مسير لمؤسسات التكوين والتعليم المهنيين"
             ];
 
             new Chart(document.getElementById('rankCenterBarChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['أستاذ متخصص', 'تقني بيداغوجي', 'مستشار توجيه', 'متصرف', 'متصرف رئيسي', 'مقتصد مسير'],
+                    labels: ['أستاذ متخصص', 'مساعد تقني', 'مستشار رئيسي', 'مستشار توجيه', 'متصرف', 'مقتصد'],
                     datasets: [
                         {
                             label: 'عدد المترشحين',
-                            data: [17, 4, 2, 1, 1, 1],
+                            data: [23, 9, 3, 1, 2, 2],
                             backgroundColor: ['#2ecc71', '#f1c40f', '#3498db', '#a55eea', '#795548', '#e67e22'],
                             borderRadius: 4
                         }
